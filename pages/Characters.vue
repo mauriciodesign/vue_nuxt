@@ -6,9 +6,8 @@
           v-for="(character, index) in characters"
           :key="index"
           cols="12"
-          lg="4"
           md="4"
-          sm="4"
+          sm="6"
         >
           <v-card>
             <v-img

@@ -1,6 +1,6 @@
 <template>
   <v-footer
-    color="primary lighten-1"
+    color="grey darken-4"
     padless
   >
     <v-row
@@ -10,18 +10,19 @@
       <v-btn
         v-for="link in links"
         :key="link"
+        :to="link.to"
         color="white"
         text
         rounded
         class="my-2"
       >
-        {{ link }}
+        {{ link.title }}
       </v-btn>
       <v-col
-        class="primary lighten-2 py-4 text-center white--text"
+        class="grey darken-4 py-4 text-center white--text"
         cols="12"
       >
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        {{ new Date().getFullYear() }} — <strong>Mauro</strong>
       </v-col>
     </v-row>
   </v-footer>
@@ -31,12 +32,22 @@
 export default {
   data: () => ({
     links: [
-      'Home',
-      'About Us',
-      'Team',
-      'Services',
-      'Blog',
-      'Contact Us'
+      {
+        title: 'Home',
+        to: '/'
+      },
+      {
+        title: 'Personajes',
+        to: '/Characters'
+      },
+      {
+        title: 'Episodios',
+        to: '/Events'
+      },
+      {
+        title: 'Listas',
+        to: '/List'
+      }
     ]
   })
 }
